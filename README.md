@@ -1,55 +1,20 @@
-# AI Web Application
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-This project contains everything you need to run the application locally.
+# Run and deploy your AI Studio app
 
-## Prerequisites
+This contains everything you need to run your app locally.
 
-- Node.js (Latest LTS recommended)
+View your app in AI Studio: https://ai.studio/apps/3d2ab6e3-2b9a-4e4b-850b-97f131c95c54
 
-## Installation
+## Run Locally
 
-Install the project dependencies:
-
-```bash
-npm install
-```
-
-## Environment Variables
-
-Create a `.env.local` file in the project root and add your API key:
-
-```env
+**Prerequisites:**  Node.js
 
 
-## Run the Project
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open your browser and visit:
-
-```
-http://localhost:3000
-```
-
-## Build for Production
-
-```bash
-npm run build
-```
-
-## Start Production Server
-
-```bash
-npm start
-```
-
-## Tech Stack
-
-- React
-- Node.js
-- JavaScript / TypeScript
-- Gemini API
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

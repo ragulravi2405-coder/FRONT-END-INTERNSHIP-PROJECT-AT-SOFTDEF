@@ -1,5 +1,5 @@
 import React from "react";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, Star, ArrowRight } from "lucide-react";
 import Button from "./Button";
 import { Plant } from "../types";
 
@@ -10,111 +10,95 @@ interface TrendingPlantsProps {
 }
 
 export default function TrendingPlants({ onExploreClick, onAddToCart, trendingPlants }: TrendingPlantsProps) {
-  const firstPlant = trendingPlants[0];
-  const secondPlant = trendingPlants[1];
-
   return (
     <section id="trending" className="py-20 px-6 md:px-12 bg-forest-950">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12">
-        {/* Banner 1: Image Left, Content Right */}
-        {firstPlant && (
-          <div className="rounded-[40px] bg-forest-900 border border-forest-800/10 p-8 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center hover:border-forest-700/20 transition-colors duration-500 shadow-sm">
-            {/* Left Image Arch */}
-            <div className="md:col-span-5 flex justify-center">
-              <div className="w-full max-w-[280px] aspect-square rounded-[100px] rounded-bl-[20px] bg-white border border-forest-800/10 flex items-center justify-center p-6 shadow-sm relative overflow-hidden group">
-                <img
-                  src={firstPlant.imageUrl}
-                  alt={firstPlant.name}
-                  referrerPolicy="no-referrer"
-                  className="w-11/12 h-11/12 object-contain transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-radial from-emerald-500/5 to-transparent pointer-events-none" />
-              </div>
-            </div>
-
-            {/* Right Content */}
-            <div className="md:col-span-7 flex flex-col items-start text-left gap-4">
-              <h3 className="font-display text-2xl md:text-3xl font-medium text-forest-800 tracking-tight">
-                For Your Desks Decorations
-              </h3>
-              <p className="font-sans text-sm md:text-base text-forest-800/80 font-light leading-relaxed max-w-xl">
-                {firstPlant.description}
-              </p>
-              
-              <div className="font-mono text-xl md:text-2xl font-bold text-forest-800 tracking-tight mt-2">
-                Rs. {firstPlant.price}/-
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex items-center gap-4 mt-4">
-                <Button
-                  variant="outline"
-                  onClick={() => onExploreClick?.(firstPlant)}
-                  className="hover:bg-forest-800 hover:text-white font-semibold"
-                >
-                  Explore
-                </Button>
-                <button
-                  onClick={() => onAddToCart?.(firstPlant)}
-                  className="w-12 h-12 rounded-xl bg-[#FDFDFB] border border-forest-800/10 hover:border-forest-700 flex items-center justify-center text-forest-800 hover:text-white hover:bg-forest-800 transition-all duration-300 shadow-sm cursor-pointer"
-                  aria-label={`Add ${firstPlant.name} to cart`}
-                >
-                  <ShoppingBag className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
+      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+        
+        {/* Section Header */}
+        <div className="flex justify-between items-center mb-6">
+          <div className="text-left">
+            <span className="font-sans text-xs font-semibold text-forest-600 tracking-widest uppercase block mb-1">
+              Top Picks
+            </span>
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight">
+              Trending Now
+            </h3>
           </div>
-        )}
+          <a 
+            href="#top-selling" 
+            className="font-sans text-xs md:text-sm font-semibold text-forest-600 hover:text-white transition-colors flex items-center gap-1.5"
+          >
+            View All <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
 
-        {/* Banner 2: Content Left, Image Right */}
-        {secondPlant && (
-          <div className="rounded-[40px] bg-forest-900 border border-forest-800/10 p-8 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center hover:border-forest-700/20 transition-colors duration-500 shadow-sm">
-            {/* Left Content (Flipped Layout) */}
-            <div className="md:col-span-7 md:order-1 order-2 flex flex-col items-start text-left gap-4">
-              <h3 className="font-display text-2xl md:text-3xl font-medium text-forest-800 tracking-tight">
-                For Your Desks Decorations
-              </h3>
-              <p className="font-sans text-sm md:text-base text-forest-800/80 font-light leading-relaxed max-w-xl">
-                {secondPlant.description}
-              </p>
-              
-              <div className="font-mono text-xl md:text-2xl font-bold text-forest-800 tracking-tight mt-2">
-                Rs. {secondPlant.price}/-
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex items-center gap-4 mt-4">
-                <Button
-                  variant="outline"
-                  onClick={() => onExploreClick?.(secondPlant)}
-                  className="hover:bg-forest-800 hover:text-white font-semibold"
-                >
-                  Explore
-                </Button>
-                <button
-                  onClick={() => onAddToCart?.(secondPlant)}
-                  className="w-12 h-12 rounded-xl bg-[#FDFDFB] border border-forest-800/10 hover:border-forest-700 flex items-center justify-center text-forest-800 hover:text-white hover:bg-forest-800 transition-all duration-300 shadow-sm cursor-pointer"
-                  aria-label={`Add ${secondPlant.name} to cart`}
-                >
-                  <ShoppingBag className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right Image Arch */}
-            <div className="md:col-span-5 md:order-2 order-1 flex justify-center">
-              <div className="w-full max-w-[280px] aspect-square rounded-[100px] rounded-bl-[20px] bg-white border border-forest-800/10 flex items-center justify-center p-6 shadow-sm relative overflow-hidden group">
+        {/* 3-Column Grid of Trending Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {trendingPlants.map((plant) => (
+            <div 
+              key={plant.id} 
+              className="group relative bg-forest-900 border border-forest-800/20 rounded-[24px] p-5 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-forest-900/40"
+            >
+              {/* Plant Image Box */}
+              <div className="relative w-full aspect-[4/3] rounded-[18px] bg-white border border-forest-800/10 flex items-center justify-center p-4 overflow-hidden mb-5">
+                {plant.tag && (
+                  <span className="absolute top-4 right-4 bg-forest-700 text-white font-sans text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm z-10">
+                    {plant.tag}
+                  </span>
+                )}
+                
                 <img
-                  src={secondPlant.imageUrl}
-                  alt={secondPlant.name}
+                  src={plant.imageUrl}
+                  alt={plant.name}
                   referrerPolicy="no-referrer"
-                  className="w-11/12 h-11/12 object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="w-10/12 h-10/12 object-contain transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-radial from-emerald-500/5 to-transparent pointer-events-none" />
+                
+                {/* Micro Ambient Glow */}
+                <div className="absolute inset-0 bg-radial from-emerald-500/0 via-transparent to-transparent group-hover:from-emerald-500/5 transition-all duration-500 pointer-events-none" />
+              </div>
+
+              {/* Plant Meta Details */}
+              <div className="text-left mb-4">
+                <span className="font-sans text-xs font-medium text-forest-600 tracking-wide uppercase mb-1 block">
+                  {plant.category || "Indoor Plant"}
+                </span>
+                <h4 className="font-display text-lg md:text-xl font-bold text-white leading-tight mb-2 group-hover:text-forest-600 transition-colors">
+                  {plant.name}
+                </h4>
+                <p className="font-sans text-xs md:text-sm text-[#d8f3dc]/70 font-light line-clamp-2 leading-relaxed">
+                  {plant.description}
+                </p>
+              </div>
+
+              {/* Price and Cart Button Row */}
+              <div className="flex items-center justify-between pt-4 border-t border-forest-800/10 mt-auto">
+                <div className="font-mono text-base md:text-lg font-bold text-white tracking-tight">
+                  Rs. {plant.price}/-
+                </div>
+                
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => onExploreClick?.(plant)}
+                    className="text-xs font-medium border-forest-800/20 text-[#d8f3dc]/80 hover:bg-forest-800 hover:text-white"
+                  >
+                    Details
+                  </Button>
+                  <button
+                    onClick={() => onAddToCart?.(plant)}
+                    className="w-9 h-9 rounded-xl bg-[#08120e] border border-forest-800/10 hover:border-forest-700 flex items-center justify-center text-[#d8f3dc] hover:text-white hover:bg-forest-800 transition-all duration-300 cursor-pointer shadow-sm"
+                    aria-label={`Add ${plant.name} to cart`}
+                  >
+                    <ShoppingBag className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          ))}
+        </div>
+        
       </div>
     </section>
   );

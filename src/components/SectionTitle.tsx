@@ -27,7 +27,7 @@ export default function SectionTitle({ children, className = "" }: SectionTitleP
       </svg>
 
       {/* Title Text */}
-      <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight text-forest-800 text-center">
+      <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white text-center">
         {children}
       </h2>
 

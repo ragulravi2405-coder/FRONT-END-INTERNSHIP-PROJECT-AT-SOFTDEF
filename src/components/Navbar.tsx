@@ -11,7 +11,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-forest-950/90 backdrop-blur-md border-b border-forest-800/10">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-forest-950/95 backdrop-blur-md border-b border-forest-800/25">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
@@ -32,8 +32,8 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
               <path d="M9 22v-4h4" />
             </svg>
           </div>
-          <span className="font-display font-bold text-xl md:text-2xl tracking-tight text-forest-800">
-            FloraVision<span className="text-forest-700">.</span>
+          <span className="font-display font-bold text-xl md:text-2xl tracking-tight text-white">
+            FloraVision<span className="text-forest-600">.</span>
           </span>
         </a>
 
@@ -41,7 +41,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
         <div className="hidden md:flex items-center gap-10">
           <a
             href="#"
-            className="font-sans text-sm font-medium text-forest-800 hover:text-forest-700 transition-colors"
+            className="font-sans text-sm font-semibold text-[#d8f3dc] hover:text-white transition-colors"
           >
             Home
           </a>
@@ -51,7 +51,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               onMouseEnter={() => setIsDropdownOpen(true)}
-              className="flex items-center gap-1.5 font-sans text-sm font-medium text-forest-800/80 hover:text-forest-800 transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 font-sans text-sm font-semibold text-[#d8f3dc]/80 hover:text-white transition-colors cursor-pointer"
             >
               Plants Type
               <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -60,25 +60,25 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
             {isDropdownOpen && (
               <div
                 onMouseLeave={() => setIsDropdownOpen(false)}
-                className="absolute top-full left-0 mt-2 w-48 rounded-xl bg-white border border-forest-800/10 p-2 shadow-2xl backdrop-blur-xl animate-fade-in"
+                className="absolute top-full left-0 mt-2 w-48 rounded-xl bg-forest-900 border border-forest-800/20 p-2 shadow-2xl backdrop-blur-xl animate-fade-in"
               >
                 <a
                   href="#top-selling"
-                  className="block px-4 py-2 text-sm rounded-lg text-forest-800/80 hover:text-forest-800 hover:bg-forest-900 transition-all"
+                  className="block px-4 py-2 text-sm rounded-lg text-[#d8f3dc]/80 hover:text-white hover:bg-forest-950/80 transition-all"
                   onClick={() => setIsDropdownOpen(false)}
                 >
                   Indoor Plants
                 </a>
                 <a
                   href="#top-selling"
-                  className="block px-4 py-2 text-sm rounded-lg text-forest-800/80 hover:text-forest-800 hover:bg-forest-900 transition-all"
+                  className="block px-4 py-2 text-sm rounded-lg text-[#d8f3dc]/80 hover:text-white hover:bg-forest-950/80 transition-all"
                   onClick={() => setIsDropdownOpen(false)}
                 >
                   Trending Succulents
                 </a>
                 <a
                   href="#best-o2"
-                  className="block px-4 py-2 text-sm rounded-lg text-forest-800/80 hover:text-forest-800 hover:bg-forest-900 transition-all"
+                  className="block px-4 py-2 text-sm rounded-lg text-[#d8f3dc]/80 hover:text-white hover:bg-forest-950/80 transition-all"
                   onClick={() => setIsDropdownOpen(false)}
                 >
                   O₂ Plants
@@ -89,13 +89,13 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
 
           <a
             href="#reviews"
-            className="font-sans text-sm font-medium text-forest-800/80 hover:text-forest-800 transition-colors"
+            className="font-sans text-sm font-semibold text-[#d8f3dc]/80 hover:text-white transition-colors"
           >
             More
           </a>
           <a
             href="#footer"
-            className="font-sans text-sm font-medium text-forest-800/80 hover:text-forest-800 transition-colors"
+            className="font-sans text-sm font-semibold text-[#d8f3dc]/80 hover:text-white transition-colors"
           >
             Contact
           </a>
@@ -103,18 +103,18 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
 
         {/* Actions (Search, Cart, Menu) */}
         <div className="flex items-center gap-4 md:gap-6">
-          <button className="text-forest-800 hover:text-forest-700 transition-colors p-2 cursor-pointer" aria-label="Search">
+          <button className="text-white hover:text-[#d8f3dc] transition-colors p-2 cursor-pointer" aria-label="Search">
             <Search className="w-5 h-5" />
           </button>
 
           <button
             onClick={onCartClick}
-            className="text-forest-800 hover:text-forest-700 transition-colors p-2 relative cursor-pointer"
+            className="text-white hover:text-[#d8f3dc] transition-colors p-2 relative cursor-pointer"
             aria-label="Cart"
           >
             <ShoppingBag className="w-5 h-5" />
             {cartCount > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 bg-forest-800 text-white font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
+              <span className="absolute -top-0.5 -right-0.5 bg-forest-700 text-white font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
                 {cartCount}
               </span>
             )}
@@ -123,7 +123,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           {/* Hamburger Menu Icon */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-forest-800 hover:text-forest-700 p-2 cursor-pointer"
+            className="md:hidden text-white hover:text-[#d8f3dc] p-2 cursor-pointer"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -133,37 +133,37 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white/95 border-b border-forest-800/10 p-6 flex flex-col gap-4 shadow-xl backdrop-blur-lg animate-fade-in">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-forest-900 border-b border-forest-800/25 p-6 flex flex-col gap-4 shadow-xl backdrop-blur-lg animate-fade-in">
           <a
             href="#"
             onClick={() => setIsOpen(false)}
-            className="font-sans text-base font-medium text-forest-800 hover:text-forest-700 py-2 border-b border-forest-800/10"
+            className="font-sans text-base font-semibold text-white hover:text-[#d8f3dc] py-2 border-b border-forest-800/20"
           >
             Home
           </a>
           <div>
-            <span className="font-sans text-base font-medium text-forest-800/60 block py-1">
+            <span className="font-sans text-base font-semibold text-[#d8f3dc]/60 block py-1">
               Plants Type:
             </span>
             <div className="pl-4 flex flex-col gap-2 mt-2">
               <a
                 href="#top-selling"
                 onClick={() => setIsOpen(false)}
-                className="font-sans text-sm text-forest-800/80 hover:text-forest-700"
+                className="font-sans text-sm text-[#d8f3dc]/80 hover:text-white"
               >
                 • Indoor Plants
               </a>
               <a
                 href="#top-selling"
                 onClick={() => setIsOpen(false)}
-                className="font-sans text-sm text-forest-800/80 hover:text-forest-700"
+                className="font-sans text-sm text-[#d8f3dc]/80 hover:text-white"
               >
                 • Trending Succulents
               </a>
               <a
                 href="#best-o2"
                 onClick={() => setIsOpen(false)}
-                className="font-sans text-sm text-forest-800/80 hover:text-forest-700"
+                className="font-sans text-sm text-[#d8f3dc]/80 hover:text-white"
               >
                 • O₂ Plants
               </a>
@@ -172,14 +172,14 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           <a
             href="#reviews"
             onClick={() => setIsOpen(false)}
-            className="font-sans text-base font-medium text-forest-800 hover:text-forest-700 py-2 border-b border-forest-800/10"
+            className="font-sans text-base font-semibold text-white hover:text-[#d8f3dc] py-2 border-b border-forest-800/20"
           >
             More
           </a>
           <a
             href="#footer"
             onClick={() => setIsOpen(false)}
-            className="font-sans text-base font-medium text-forest-800 hover:text-forest-700 py-2"
+            className="font-sans text-base font-semibold text-white hover:text-[#d8f3dc] py-2"
           >
             Contact
           </a>

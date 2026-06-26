@@ -7,6 +7,7 @@ export interface Plant {
   imageUrl: string;
   isTrending?: boolean;
   isTopSeller?: boolean;
+  tag?: string;
 }
 
 export interface Review {

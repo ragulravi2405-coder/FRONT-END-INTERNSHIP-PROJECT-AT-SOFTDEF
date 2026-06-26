@@ -6,14 +6,13 @@ export default function Footer() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      alert(`Thank you for subscribing, ${email}!`);
       setEmail("");
     }
   };
 
   return (
-    <footer id="footer" className="bg-forest-900 border-t border-forest-800/10 pt-16 pb-8 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 pb-12 border-b border-forest-800/10">
+    <footer id="footer" className="bg-forest-900 border-t border-forest-800/20 pt-16 pb-8 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 pb-12 border-b border-forest-800/15">
         {/* Brand Info */}
         <div className="flex flex-col gap-6 text-left">
           <a href="#" className="flex items-center gap-2 group">
@@ -33,29 +32,29 @@ export default function Footer() {
                 <path d="M9 22v-4h4" />
               </svg>
             </div>
-            <span className="font-display font-bold text-xl md:text-2xl tracking-tight text-forest-800">
-              FloraVision<span className="text-forest-700">.</span>
+            <span className="font-display font-bold text-xl md:text-2xl tracking-tight text-white animate-pulse">
+              FloraVision<span className="text-forest-600">.</span>
             </span>
           </a>
-          <p className="font-sans text-sm md:text-base text-forest-800/80 font-light leading-relaxed max-w-sm">
+          <p className="font-sans text-xs md:text-sm text-[#d8f3dc]/75 font-light leading-relaxed max-w-sm">
             "From lush indoor greens to vibrant outdoor blooms, our plants are crafted to thrive and elevate your living environment."
           </p>
           <div className="flex items-center gap-6 mt-2">
             <a
               href="#"
-              className="font-display text-sm font-semibold tracking-wider text-forest-800 hover:text-forest-700 transition-colors"
+              className="font-display text-xs font-semibold tracking-wider text-[#d8f3dc]/80 hover:text-white transition-colors"
             >
               FB
             </a>
             <a
               href="#"
-              className="font-display text-sm font-semibold tracking-wider text-forest-800 hover:text-forest-700 transition-colors"
+              className="font-display text-xs font-semibold tracking-wider text-[#d8f3dc]/80 hover:text-white transition-colors"
             >
               TW
             </a>
             <a
               href="#"
-              className="font-display text-sm font-semibold tracking-wider text-forest-800 hover:text-forest-700 transition-colors"
+              className="font-display text-xs font-semibold tracking-wider text-[#d8f3dc]/80 hover:text-white transition-colors"
             >
               LI
             </a>
@@ -64,14 +63,14 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex flex-col gap-6 text-left md:pl-12">
-          <h4 className="font-display text-base md:text-lg font-medium text-forest-800 tracking-wide">
+          <h4 className="font-display text-base font-bold text-white tracking-wide">
             Quick Link's
           </h4>
           <ul className="flex flex-col gap-3">
             <li>
               <a
                 href="#"
-                className="font-sans text-sm text-forest-800/80 hover:text-forest-800 transition-colors font-light"
+                className="font-sans text-xs md:text-sm text-[#d8f3dc]/75 hover:text-white transition-colors font-light"
               >
                 Home
               </a>
@@ -79,7 +78,7 @@ export default function Footer() {
             <li>
               <a
                 href="#top-selling"
-                className="font-sans text-sm text-forest-800/80 hover:text-forest-800 transition-colors font-light"
+                className="font-sans text-xs md:text-sm text-[#d8f3dc]/75 hover:text-white transition-colors font-light"
               >
                 Type's Of plant's
               </a>
@@ -87,7 +86,7 @@ export default function Footer() {
             <li>
               <a
                 href="#reviews"
-                className="font-sans text-sm text-forest-800/80 hover:text-forest-800 transition-colors font-light"
+                className="font-sans text-xs md:text-sm text-[#d8f3dc]/75 hover:text-white transition-colors font-light"
               >
                 Contact
               </a>
@@ -95,7 +94,7 @@ export default function Footer() {
             <li>
               <a
                 href="#"
-                className="font-sans text-sm text-forest-800/80 hover:text-forest-800 transition-colors font-light"
+                className="font-sans text-xs md:text-sm text-[#d8f3dc]/75 hover:text-white transition-colors font-light"
               >
                 Privacy
               </a>
@@ -105,7 +104,7 @@ export default function Footer() {
 
         {/* Newsletter Subscription */}
         <div className="flex flex-col gap-6 text-left">
-          <h4 className="font-display text-base md:text-lg font-medium text-forest-800 tracking-wide">
+          <h4 className="font-display text-base font-bold text-white tracking-wide">
             For Every Update.
           </h4>
           <form onSubmit={handleSubmit} className="flex max-w-md w-full">
@@ -115,7 +114,7 @@ export default function Footer() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter Email"
               required
-              className="flex-1 bg-transparent border border-forest-800/30 rounded-l-md px-4 py-2.5 text-sm text-forest-800 placeholder-forest-800/40 focus:outline-none focus:border-forest-800 transition-colors"
+              className="flex-1 bg-[#08120e]/60 border border-forest-800/20 rounded-l-md px-4 py-2.5 text-sm text-white placeholder-[#d8f3dc]/40 focus:outline-none focus:border-forest-600 transition-colors"
             />
             <button
               type="submit"

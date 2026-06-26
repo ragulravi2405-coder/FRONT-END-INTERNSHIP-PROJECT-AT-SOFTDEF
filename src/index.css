@@ -6,19 +6,19 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
-  --color-forest-950: #FDFDFB; /* Warm elegant off-white cream background */
-  --color-forest-900: #F0F4F2; /* Soft minty pastel grey-green background */
-  --color-forest-800: #1B4332; /* Primary deep green */
-  --color-forest-700: #2D6A4F; /* Secondary forest green */
-  --color-forest-600: #40916C; /* Highlight/accent green */
-  --color-gold: #2D6A4F;       /* Classy forest green accent */
-  --color-gold-light: #40916C;
+  --color-forest-950: #08120e; /* Deep rich dark forest black background */
+  --color-forest-900: #0f241a; /* Premium dark forest container/card background */
+  --color-forest-800: #1b4332; /* Deep green accent / secondary background */
+  --color-forest-700: #2d6a4f; /* Vibrant forest green accent */
+  --color-forest-600: #40916c; /* Bright highlight green */
+  --color-gold: #d8f3dc;       /* Soft minty gold-alternative cream */
+  --color-gold-light: #b7e4c7; /* Light mint pastel */
 }
 
 @layer base {
   body {
-    background-color: #FDFDFB;
-    color: #1B4332;
+    background-color: #08120e;
+    color: #d8f3dc;
     font-family: var(--font-sans);
   }
 }
