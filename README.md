@@ -1,20 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 🌿 FloraVision
 
-# Run and deploy your AI Studio app
+FloraVision is a modern and responsive plant showcase web application built using React, TypeScript, and Vite. It provides an elegant interface for exploring featured plants, trending collections, oxygen-producing plants, and customer testimonials.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/3d2ab6e3-2b9a-4e4b-850b-97f131c95c54
+- 🌱 Responsive design
+- 🌿 Trending plant collections
+- 🍃 Best oxygen-producing plants
+- ⭐ Customer testimonials
+- 🎨 Modern and clean user interface
+- ⚡ Fast performance with Vite
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- React
+- TypeScript
+- Vite
+- CSS
 
+## Installation
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+git clone https://github.com/your-username/floravision.git
+
+cd floravision
+
+npm install
+
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+ ├── components/
+ ├── data/
+ ├── App.tsx
+ ├── main.tsx
+ └── index.css
+```
+
+## License
+
+This project is intended for learning and portfolio purposes.
