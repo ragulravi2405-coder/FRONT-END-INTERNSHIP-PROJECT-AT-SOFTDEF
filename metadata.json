@@ -1,0 +1,6 @@
+{
+  "name": "FloraVision",
+  "description": "A premium, pixel-perfect plant shop featuring trending and top-selling indoor plants with detailed descriptions, pricing, and reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
